@@ -1,5 +1,7 @@
 # Pinouts
 
+## STM32
+
 | STM32 Pin#	| GPIO	|-| Peripheral	| Pin	| Function | 
 | ----- 		| ----  |-| -----     | ----  | -----------	| 
 | 34			| PA00	|-| Aux uC	| 47	| WKUP | 
@@ -12,12 +14,13 @@
 | 105			| PA13	|-| Programming Header	| 2	| SWDIO | 
 | 109			| PA14	|-| Programming Header	| 4	| SWCLK | 
 | 110			| PA15	|-| EEPROM	| 1	| ~CS | 
+| 47			| PB01	|-| POWR605     | 5	| VMON4 | 
 | 136			| PB06	|-| LTE header	| 2	| USART1_TX | 
 | 137			| PB07	|-| LTE header	| 3	| USART1_RX | 
 | 139			| PB08	|-| Diff Pressure Sensor	| 	| SCL | 
 | 140			| PB09	|-| Diff Pressure Sensor	| 	| SDA | 
-| 69			| PB10	|-| Blue edge connector	| 9	| USART3_TX (?) | 
-| 70			| PB11	|-| Blue edge connector	| 7	| USART3_RX (?) | 
+| 69			| PB10	|-| Blue edge connector	| 9	| USART3_TX | 
+| 70			| PB11	|-| Blue edge connector	| 7	| USART3_RX | 
 | 74			| PB13	|-| Motor Driver	| 22	| INL_C | 
 | 75			| PB14	|-| Motor Driver	| 20	| INL_B | 
 | 76			| PB15	|-| Motor Driver	| 18	| INL_A | 
@@ -70,5 +73,24 @@
 | 57			| PG01	|-| SRAM	| 24	| ADDR_11 | 
 | 92			| PG07	|-| Home Button	| 	|  | 
 | 93			| PG08	|-| Power Button	| 	|  | 
+| 127			| PG12	|-| POWR605	| 15    | IN_OUT5 | 
+| 128			| PG13	|-| POWR605	| 17    | IN_OUT4 | 
 | 23			| PH00	|-| OSC	| 1	| OSC_IN | 
 | 24			| PH01	|-| OSC	| 2	| OSC_OUT | 
+
+
+## Accessory Connector
+
+The accessory connector is a blue edge-connect PCB connector. See the example pcb for the layout of a mating PCB. The following table matches the pinout when looking into the side connector:
+
+
+| Pin # | Function |   xxx  |  Pin # | Function  |
+| ----- | -------- | ------ | -----  | --------- |
+|   9   | TX (Out) | ------ |   10   |  ?        |
+|   7   | RX (In)  | ------ |   8    |  GND      |
+|   5   | ?        | ------ |   6    |  ?        |
+|   3   | ?        | ------ |   4    |  ?        |
+|   1   | ?        | ------ |   2    |  +24V     |
+
+![Photo of Side Connector with Pin Numbering](/docs/images/airsense-side-annotated.jpg)
+
